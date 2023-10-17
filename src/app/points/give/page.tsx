@@ -74,6 +74,16 @@ export default function GivePointFormPage() {
     },
     [router, merit],
   );
+  //상점 목록과 대응값
+  const meritData = [
+    {id = 1, name : '상점 1', value: 5},
+    {id = 2, name : '상점 2', value: 3}
+  ];
+  //벌점 목록과 대응값
+  const demeritData = [
+    {id = 1, name : '벌점 1', value : -5},
+    {id = 2, name : '벌점 2', value : -3}
+  ];
 
   return (
     <div className='px-4'>
@@ -111,26 +121,33 @@ export default function GivePointFormPage() {
             <Input.Search loading={searching} />
           </AutoComplete>
         </Form.Item>
-        <Form.Item<number>
-          name='value'
-          rules={[{ required: true, message: '상벌점을 입력해주세요' }]}
+        <Form.Item 
+          name='merit' 
+          label='상점'
         >
-          <InputNumber
-            min={1}
-            controls
-            addonAfter='점'
-            type='number'
-            inputMode='numeric'
-            addonBefore={
-              <Select
-                value={merit}
-                onChange={useCallback((value: number) => setMerit(value), [])}
-              >
-                <Select.Option value={1}>상점</Select.Option>
-                <Select.Option value={-1}>벌점</Select.Option>
-              </Select>
-            }
-          />
+          <Select 
+            placeholder='상점을 선택해주세요'
+          >
+            {meritData.map((merit) => (
+              <Select.Option key={merit.id.toString()} value={merit.id.toString()}>
+                {`${merit.name} (${merit.value > 0 ? `+${merit.value}` : 0})`}
+              </Select.Option>
+            ))}
+          </Select>
+        </Form.Item>
+        <Form.Item 
+          name='demerit' 
+          label='벌점'
+        >
+          <Select 
+            placeholder='벌점을 선택해주세요'
+            >
+              {demeritData.map((demerit) => (
+                <Select.Option key={demerit.id.toString()} value={demerit.id.toString()}>
+                  {`${demerit.name} (${demerit.value > 0 ? 0 : demerit.value})`}
+                </Select.Option>
+              ))}
+          </Select>
         </Form.Item>
         <Form.Item<string>
           name='reason'

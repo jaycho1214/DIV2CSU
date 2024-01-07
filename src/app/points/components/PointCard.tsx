@@ -36,14 +36,20 @@ export function PointCard({ pointId }: PointCardProps) {
     if (point == null) {
       return undefined;
     }
+    //벌점일 경우 빨간색
+    if (point.verified_at < 0) {
+      return '#ED2939';
+    }
     if (point.verified_at) {
       return '#A7C0FF';
     }
+    //반려됐을 경우 주황색
     if (point.rejected_at || point.rejected_reason) {
-      return '#ED2939';
+      return '#ed8429';
     }
     return '#D9D9D9';
   })();
+  
 
   return (
     <Card

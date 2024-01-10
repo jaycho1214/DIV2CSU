@@ -4,8 +4,11 @@ on:
     branches:
       - main
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      NETLIFY_SITE_ID: ${{ secrets.NETLIFY_PROD_SITE_ID }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
@@ -27,18 +30,10 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Install Netlify Plugin
-        run: yarn add -D @netlify/plugin-nextjs
+        run: yarn add -D @netlify/plugin-nextjs netlify-cli
 
-      - name: Build NextJS
-        run: yarn run build
+      - name: Build and Deploy to Netlify
+        run: yarn netlify deploy --build --prod --dir=.next --message '${{ github.event.head_commit.message }}'
         env:
           POSTGRES_URL: ${{ secrets.POSTGRES_URL }}
-
-      - name: Deploy to Netlify
-        uses: netlify/actions/cli@master
-        with:
-          args: deploy --prod --dir=.next --message '${{ github.event.head_commit.message }}'
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_PROD_SITE_ID }}
-        timeout-minutes: 4
+          NEXT_FORCE_EDGE_IMAGES: true

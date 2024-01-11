@@ -264,6 +264,7 @@ export async function resetPasswordForce(sn: string) {
       .where('sn', '=', sn)
       .set({ password: salt + hashed })
       .executeTakeFirstOrThrow();
+      console.log('새 비밀번호:', password);
     return { password, message: null };
   } catch (e) {
     return { password: null, message: '비밀번호 초기화에 실패했습니다' };

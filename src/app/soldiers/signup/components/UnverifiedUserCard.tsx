@@ -35,7 +35,6 @@ export function UnverifiedUserCard({
       if (success) {
         if (!value) { // 반려일 경우
           setState('rejected'); // 상태를 'rejected'로 변경
-          await saveRejectedAtToDatabase(sn); // db에서 'rejected_at'필드값 생성
           message.success(resultMessage);
         } else {
           // 반려가 아닐 경우는 현재 구현과 동일한 로직을 유지.

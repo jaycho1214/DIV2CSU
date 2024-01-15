@@ -37,6 +37,9 @@ export function PointCard({ pointId }: PointCardProps) {
       return undefined;
     }
     if (point.verified_at) {
+      if (point.value < 0) {
+        return '#ed8429';
+      }
       return '#A7C0FF';
     }
     if (point.rejected_at || point.rejected_reason) {
@@ -44,6 +47,7 @@ export function PointCard({ pointId }: PointCardProps) {
     }
     return '#D9D9D9';
   })();
+  
 
   return (
     <Card

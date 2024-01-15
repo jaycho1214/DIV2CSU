@@ -33,8 +33,14 @@ export function UnverifiedUserCard({
         value,
       );
       if (success) {
-        setState(value ? 'accepted' : 'rejected');
-        message.success(resultMessage);
+        if (!value) { // 반려일 경우
+          setState('rejected'); // 상태를 'rejected'로 변경
+          message.success(resultMessage);
+        } else {
+          // 반려가 아닐 경우는 현재 구현과 동일한 로직을 유지.
+          setState('accepted');
+          message.success(resultMessage);
+        }
       } else {
         message.error(resultMessage);
       }
@@ -42,8 +48,9 @@ export function UnverifiedUserCard({
     },
     [sn, message],
   );
-
-  return (
+  
+  //반려되지 않은 유저일 경우 반환
+  return state !== 'rejected' && (
     <Card
       className='m-2'
       style={{
@@ -89,5 +96,5 @@ export function UnverifiedUserCard({
         </div>
       </div>
     </Card>
-  );
+  );  
 }

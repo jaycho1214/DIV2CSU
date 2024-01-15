@@ -23,7 +23,7 @@ export function PasswordForm({ sn }: PasswordFormProps) {
       .then(() => {
         notification.success({
           message: '변경 성공',
-          description: '비밀번호을 변경하였습닏나',
+          description: '비밀번호을 변경하였습니다',
         });
         formRef.current?.resetFields();
       })

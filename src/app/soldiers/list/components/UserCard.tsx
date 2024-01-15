@@ -5,9 +5,14 @@ export type UserCardProps = {
   sn: string;
   name: string;
   type: string;
+  deleted_at: Date | null;
+  rejected_at: Date | null;
 };
 
-export function UserCard({ type, sn, name }: UserCardProps) {
+export function UserCard({ type, sn, name, deleted_at, rejected_at }: UserCardProps) {
+  if (deleted_at && rejected_at) {
+    return null; // deleted_at, rejected_at 값이 존재할 경우 카드를 null로 반환하여 숨김
+}
   return (
     <Link href={`/soldiers?sn=${sn}`}>
       <Card className='my-1 mx-1'>

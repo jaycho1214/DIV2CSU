@@ -130,6 +130,7 @@ export async function listSoldiers({
             eb('rejected_at', 'is not', null),
             eb('verified_at', 'is not', null),
           ]),
+          eb('deleted_at', 'is', null), // 삭제된 유저 제외
         ]),
       )
       .limit(10)
@@ -226,3 +227,4 @@ export async function deleteSoldier({
     .executeTakeFirstOrThrow();
   return { message: null };
 }
+

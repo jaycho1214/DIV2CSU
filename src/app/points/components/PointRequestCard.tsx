@@ -90,6 +90,7 @@ export function PointRequestCard({ pointId }: PointRequestCardProps) {
 
   return (
     <>
+    {success === null && (
       <Card
         className={success != null ? 'line-through' : ''}
         style={{ backgroundColor: success == null ? '#A7C0FF' : '#D9D9D9' }}
@@ -150,6 +151,7 @@ export function PointRequestCard({ pointId }: PointRequestCardProps) {
           </div>
         </Skeleton>
       </Card>
+    )}
       <Modal
         open={modalShown}
         confirmLoading={loading}

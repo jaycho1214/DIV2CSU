@@ -75,6 +75,7 @@ export async function listUnverifiedSoldiers() {
     .selectFrom('soldiers')
     .select(['sn', 'name', 'type'])
     .where('verified_at', 'is', null)
+    .where('rejected_at', 'is not', null)
     .execute();
   return { message: null, data };
 }
@@ -226,32 +227,5 @@ export async function deleteSoldier({
     .set({ deleted_at: value ? new Date() : null })
     .executeTakeFirstOrThrow();
   return { message: null };
-}
-
-//회원가입 신청한 유저 반려하는 함수
-export async function saveRejectedAtToDatabase(sn: string) {
-  try {
-    const current = await currentSoldier();
-    if (!hasPermission(current.permissions, ['Admin', 'UserAdmin', 'VerifyUser'])) {
-      return {
-        success: false,
-        message: '권한이 없습니다',
-      };
-    }
-    await kysely
-      .updateTable('soldiers')
-      .where('sn', '=', sn)
-      .set({ rejected_at: new Date() })
-      .executeTakeFirstOrThrow();
-    return {
-      success: true,
-      message: '반려일자가 저장되었습니다',
-    };
-  } catch (e) {
-    return {
-      success: false,
-      message: '실패하였습니다',
-    };
-  }
 }
 

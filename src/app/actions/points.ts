@@ -54,6 +54,7 @@ export async function fetchPendingPoints() {
     .selectFrom('points')
     .where('giver_id', '=', sn!)
     .where('verified_at', 'is', null)
+    .where('rejected_at', 'is', null)
     .selectAll()
     .execute();
 }

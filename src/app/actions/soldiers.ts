@@ -75,7 +75,7 @@ export async function listUnverifiedSoldiers() {
     .selectFrom('soldiers')
     .select(['sn', 'name', 'type'])
     .where('verified_at', 'is', null)
-    .where('rejected_at', 'is not', null)
+    .where('rejected_at', 'is', null)
     .execute();
   return { message: null, data };
 }

@@ -29,7 +29,7 @@ export function TotalPointBox({ user }: { user: Soldier }) {
                 data.merit
               }점`}
               prefix={<CheckOutlined />}
-              valueStyle={{ color: '#cf1322' }}
+              valueStyle={{ color: '#3f8600' }}
             />
           ) : null}
         </Skeleton>
@@ -45,7 +45,7 @@ export function TotalPointBox({ user }: { user: Soldier }) {
               title='총 벌점'
               value={`${-data.demerit}점`}
               prefix={<CloseOutlined />}
-              valueStyle={{ color: '#3f8600' }}
+              valueStyle={{ color: '#cf1322' }}
             />
           ) : null}
         </Skeleton>

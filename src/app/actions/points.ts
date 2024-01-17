@@ -139,10 +139,12 @@ export async function fetchPointSummary(sn: string) {
   const [meritData, demeritData, usedMeritData] = await Promise.all([
     pointsQuery
       .where('value', '>', 0)
+      .where('verified_at', 'is not', null) // verified_at이 null이 아닌 경우
       .select((eb) => eb.fn.sum<string>('value').as('value'))
       .executeTakeFirst(),
     pointsQuery
       .where('value', '<', 0)
+      .where('verified_at', 'is not', null) // 승인된 상벌점만 가져오도록 수정
       .select((eb) => eb.fn.sum<string>('value').as('value'))
       .executeTakeFirst(),
     usedPointsQuery
@@ -156,6 +158,7 @@ export async function fetchPointSummary(sn: string) {
     usedMerit: parseInt(usedMeritData?.value ?? '0', 10),
   };
 }
+
 
 export async function createPoint({
   value,

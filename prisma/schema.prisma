@@ -38,6 +38,8 @@ model points {
   giver_id           String    @db.VarChar(11)
   // 상벌점 받은 용사 군번
   receiver_id        String    @db.VarChar(11)
+  // 최종 승인 지휘관 군번
+  commander_id       String    @db.VarChar(11)
   // 상벌점 요청/부여한 날짜
   created_at         DateTime  @default(now()) @db.Timestamp(0)
   // 상벌점 승인난 날짜

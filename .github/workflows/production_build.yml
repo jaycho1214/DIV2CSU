@@ -21,7 +21,7 @@ jobs:
         with:
           cache: 'yarn'
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         with:
           path: |
             ${{ github.workspace }}/.next/cache
@@ -30,7 +30,7 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
 
       - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install
 
       - name: Install Netlify Plugin
         run: yarn add -D @netlify/plugin-nextjs netlify-cli

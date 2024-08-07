@@ -33,7 +33,7 @@ export default function LoginPage() {
           className='w-40'
           width={400}
           height={400}
-          src='https://upload.wikimedia.org/wikipedia/commons/0/0f/Flag_of_South_Korea.png'
+          src='/images/flag.jpg'
           alt='Divison Logo'
         />
         <h1 className='mt-5 text-center font-black text-3xl'>병영생활 관리</h1>

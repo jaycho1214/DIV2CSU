@@ -28,7 +28,7 @@ export default function LoginPage() {
         priority
         width={250}
         height={250}
-        src='/images/flag.jpg'
+        src='/images/flag.svg'
         alt='Divison Logo'
       />
       <h1 className='text-center font-black text-3xl'>병영생활 관리</h1>

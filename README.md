@@ -1,3 +1,8 @@
+<h1>
+  Deprecated
+</h1>
+<p>다음 <a href="https://github.com/div2csu/DIV2CSU">Repo</a>로 이동되었습니다</p>
+
 <h1 align="center">
   <a href="https://div2csu.vercel.app/">
     제2신속대응사단 전투근무지원대대

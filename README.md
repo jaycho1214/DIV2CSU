@@ -1,4 +1,4 @@
-# DIV2CSU &middot; [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Build and Deploy to Netlify](https://github.com/div2csu/DIV2CSU/actions/workflows/production_build.yml/badge.svg)](https://github.com/div2csu/DIV2CSU/actions/workflows/production_build.yml) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/div2csu/DIV2CSU/pulls)
+# DIV2CSU &middot; [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Build and Deploy to Netlify](https://github.com/jaycho1214/DIV2CSU/actions/workflows/production_build.yml/badge.svg)](https://github.com/jaycho1214/DIV2CSU/actions/workflows/production_build.yml) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/jaycho1214/DIV2CSU/pulls)
 
 **DIV2CSU**는 대한민국 군대 내 종이로 되어있던 아날로그식 일처리를 일정 부분 디지털화 시킨 웹사이트입니다. 보안법에 저촉될 위험이 있는 정보들을 다루기 보다는 상점, 동아리 및 용사 관리 위주등에 초점을 맞추고 있습니다.
 
@@ -34,10 +34,10 @@ DIV2CSU는 오픈소스 웹사이트로, 부대에 적용하고 싶거나 개발
 
 ### 이슈 제보 및 피드백 제안
 
-이슈 또는 피드백은 [다음](https://github.com/div2csu/DIV2CSU/issues)에 제보 부탁드립니다.
+이슈 또는 피드백은 [다음](https://github.com/jaycho1214/DIV2CSU/issues)에 제보 부탁드립니다.
 
 
 ## 📄 License
 
-DIV2CSU는 [MIT License](https://github.com/div2csu/DIV2CSU/blob/main/LICENSE)로 자유롭게 이용하시면 됩니다.
+DIV2CSU는 [MIT License](https://github.com/jaycho1214/DIV2CSU/blob/main/LICENSE)로 자유롭게 이용하시면 됩니다.
 

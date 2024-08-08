@@ -1,4 +1,4 @@
-# DIV2CSU &middot; [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Build and Deploy to Netlify](https://github.com/jaycho1214/DIV2CSU/actions/workflows/production_build.yml/badge.svg)](https://github.com/jaycho1214/DIV2CSU/actions/workflows/production_build.yml) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/jaycho1214/DIV2CSU/pulls)
+# DIV2CSU &middot; [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/jaycho1214/DIV2CSU/pulls)
 
 **DIV2CSU**는 대한민국 군대 내 종이로 되어있던 아날로그식 일처리를 일정 부분 디지털화 시킨 웹사이트입니다. 보안법에 저촉될 위험이 있는 정보들을 다루기 보다는 상점, 동아리 및 용사 관리 위주등에 초점을 맞추고 있습니다.
 
